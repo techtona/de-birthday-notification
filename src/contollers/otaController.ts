@@ -34,7 +34,7 @@ const check = async (req, res) => {
             host: process.env.APP_URL,
             port: 80,
             bin: `/download/${req.params.token}/firmware.bin`,
-            check_signature: true
+            check_signature: false
         })
     } catch (e) {
         logger.error(e);
