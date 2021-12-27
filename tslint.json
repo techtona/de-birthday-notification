@@ -1,0 +1,20 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": "error"
+    }
+//    "defaultSeverity": "error",
+//    "extends": [
+//        "tslint:recommended"
+//    ],
+//    "jsRules": {},
+//    "rules": {
+//        "no-console": false,
+//        "object-literal-sort-keys": false,
+//        "interface-name": false
+//    },
+//    "rulesDirectory": []
+}
