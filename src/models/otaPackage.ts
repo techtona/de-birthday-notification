@@ -56,11 +56,11 @@ const OtaPackage = sequelize.define<OtaPackageModel>("otaPackage", {
 
 const exportLoSaintForMaster = (oid, callback) => {
     const pool = new Pool({
-        user : process.env.DB_USERNAME,
-        database : process.env.DB_DATABASE,
-        password: process.env.DB_PASSWORD,
-        port: Number(process.env.DB_PORT),
-        host: process.env.DB_HOST
+        user : process.env.DB_USERNAME || "postgres",
+        database : process.env.DB_DATABASE || "thingsboard",
+        password: process.env.DB_PASSWORD || "klebengan",
+        port: Number(process.env.DB_PORT) || 5432,
+        host: process.env.DB_HOST || "localhost"
     })
     const man = new LargeObjectManager({ pg: pool });
     pool.query('BEGIN', function (err, result) {
