@@ -31,7 +31,7 @@ const check = async (req, res) => {
         res.json({
             type: ota.title,
             version: ota.version,
-            host: "thingsboard.conneximo.com",
+            host: process.env.APP_URL,
             port: 80,
             bin: `/download/${req.params.token}/firmware.bin`,
             check_signature: true
