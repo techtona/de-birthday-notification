@@ -1,8 +1,6 @@
 import { Dialect, Sequelize } from "sequelize";
 import dotenv from "dotenv";
-dotenv.config({path:__dirname+'/../../.env'});
-
-console.log(__dirname+'.env')
+dotenv.config();
 
 const dbName = process.env.DB_DATABASE;
 const dbUser = process.env.DB_USER;

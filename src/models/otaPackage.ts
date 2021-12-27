@@ -3,9 +3,7 @@ import sequelize from "../configs/db";
 import {LargeObjectManager} from "pg-large-object";
 import {Pool} from "pg"
 import dotenv from "dotenv";
-dotenv.config({path:__dirname+'/../../.env'});
-
-console.log(__dirname+'.env')
+dotenv.config();
 
 export interface OtaPackageModel extends Sequelize.Model {
     id: string;
