@@ -60,6 +60,9 @@ const exportLoSaintForMaster = (oid, callback) => {
     const pool = new Pool({
         user : process.env.DB_USERNAME,
         database : process.env.DB_DATABASE,
+        password: process.env.DB_PASSWORD,
+        port: Number(process.env.DB_PORT),
+        host: process.env.DB_HOST
     })
     const man = new LargeObjectManager({ pg: pool });
     pool.query('BEGIN', function (err, result) {
