@@ -65,7 +65,7 @@ const download = async (req, res, next) => {
 
         res.set({
             "Content-Type" : "application/octet-stream",
-            "Content-Length" : Number(ota.data_size/1000),
+            "Content-Length" : ota.data_size,
             "Content-Disposition": "attachment; filename="+ota.file_name,
         })
 
