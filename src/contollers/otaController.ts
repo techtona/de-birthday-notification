@@ -64,7 +64,7 @@ const download = async (req, res, next) => {
             return res.status(404).json({message: "Ota Package not found"});
 
         res.set({
-            "Content-Type" : ota.content_type,
+            "Content-Type" : "application/octet-stream",
             "Content-Disposition": "attachment; filename="+ota.file_name,
         })
 
