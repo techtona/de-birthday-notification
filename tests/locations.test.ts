@@ -1,9 +1,8 @@
 import request from 'supertest';
-import app from '../src/app';
-import redis from '../src/helpers/redis'
+import app from '../app';
 
-let response;
-let header;
+let response : any;
+let header : any;
 const query = {
     query: `query{
       login(email: "arthur", password: "112233"){
@@ -47,5 +46,3 @@ describe("GET /province", () => {
         });
     });
 });
-
-afterAll(() => redis.disconnect())

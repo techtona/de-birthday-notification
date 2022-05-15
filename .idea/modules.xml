@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fota.iml" filepath="$PROJECT_DIR$/.idea/fota.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/de-birthday-notification.iml" filepath="$PROJECT_DIR$/.idea/de-birthday-notification.iml" />
     </modules>
   </component>
 </project>
