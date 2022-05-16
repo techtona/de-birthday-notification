@@ -1,19 +1,16 @@
 import logger from "../../../configs/logger"
 import express from "express"
-import User from "../../database/mongodb/models/user"
+import User from "../../database/postgres/models/user"
 
 const index = async (req : express.Request, res: express.Response) => {
-    let users = await User.find({},{
-        first_name : 1,
-        last_name : 1,
-        date_of_birth : 1,
-        address : 1,
-        timezone : 1
-    })
-
-    return res.json({
-        message : users
-    })
+    try {
+        let users = await User.findAll({})
+        return res.json({
+            message : users
+        })
+    }catch (e){
+        throw Error(e)
+    }
 }
 
 const store = async (req : express.Request, res: express.Response) => {
@@ -31,7 +28,7 @@ const store = async (req : express.Request, res: express.Response) => {
         let data = {
             first_name : req.body.first_name,
             last_name : req.body.last_name,
-            date_of_birth : new Date(req.body.date_of_birth).getTime(),
+            date_of_birth : new Date(req.body.date_of_birth),
             address : req.body.address,
             timezone : req.body.timezone
         }
@@ -49,14 +46,18 @@ const store = async (req : express.Request, res: express.Response) => {
 }
 
 const destroy = async (req : express.Request, res: express.Response) => {
-    let user = await User.findOne({_id : req.params.id})
+    let user = await User.findOne({
+        where : {
+            id : req.params.id
+        }
+    })
     if (!user)
         return res.json({
             message : "User not found"
         })
 
     try{
-        await User.deleteOne({_id : req.params.id})
+        await user.destroy()
     }catch (e){
         throw e;
     }
@@ -75,24 +76,23 @@ const update = async (req : express.Request, res: express.Response) => {
             message : "first_name, last_name, date_of_birth, address, and timezone are required"
         }).status(400)
     }
-
-    let user = await User.findOne({_id : req.params.id})
-    if (!user)
-        return res.json({
-            message : "User not found"
+    try{
+        let user = await User.findByPk(req.params.id)
+        if (!user)
+            return res.json({
+                message : "User not found"
         })
 
-    try{
         let data = {
             first_name : req.body.first_name,
             last_name : req.body.last_name,
-            date_of_birth : new Date(req.body.date_of_birth).getTime(),
+            date_of_birth : new Date(req.body.date_of_birth),
             address : req.body.address,
             timezone : req.body.timezone
         }
-        await User.updateOne({_id : req.params.id},data)
+        await user.update(data)
     }catch (e){
-        throw e;
+        console.log(e);
     }
     return res.json({
         message : "User has been updated"

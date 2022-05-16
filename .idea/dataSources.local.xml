@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-213.5744.223">
-    <data-source name="@localhost" uuid="4b69a4f3-2c37-4657-b264-192a6c03232c">
-      <database-info product="Mongo DB" version="5.0.8" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.14" dbms="MONGO" exact-version="5.0.8" exact-driver-version="1.14" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+    <data-source name="@localhost" uuid="8345e2be-e008-4f82-877c-815710800dc4">
+      <database-info product="PostgreSQL" version="14.2 (Debian 14.2-1.pgdg110+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.3.3" dbms="POSTGRES" exact-version="14.2" exact-driver-version="42.3">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>docker</user-name>
+      <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="@" />
+          <node negative="1">
+            <node kind="database" qname="@">
+              <node kind="schema" qname="@" />
+            </node>
+            <node kind="database" qname="birthday_notification">
+              <node kind="schema" qname="public" />
+            </node>
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>

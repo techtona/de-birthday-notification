@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/jatipikukuh/.nvm/versions/node/v14.18.2/bin/node /opt/homebrew/bin/yarn add @types/ts-node
+  /Users/jatipikukuh/.nvm/versions/node/v14.18.2/bin/node /opt/homebrew/bin/yarn add @types/kafkajs
 
 PATH: 
   /Users/jatipikukuh/.nvm/versions/node/v14.18.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/Applications/XAMPP/xamppfiles/bin:/Applications/Sublime Text.app/Contents/SharedSupport/bin:/opt/homebrew/opt/nvm:/Users/jatipikukuh/Library/Android/sdk/emulator:/Library/Apple/usr/bin:/Users/jatipikukuh/latihan/de-birthday-notification/node_modules/.bin
@@ -14,17 +14,8 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fts-node: Not found
-      at Request.params.callback [as _callback] (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:67029:18)
-      at Request.self.callback (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:140883:22)
-      at Request.emit (events.js:400:28)
-      at Request.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141855:10)
-      at Request.emit (events.js:400:28)
-      at IncomingMessage.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141777:12)
-      at Object.onceWrapper (events.js:519:28)
-      at IncomingMessage.emit (events.js:412:35)
-      at endReadableNT (internal/streams/readable.js:1334:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:71:26)
 
 npm manifest: 
   {
@@ -54,6 +45,7 @@ npm manifest:
       "@types/json2csv": "^5.0.3",
       "@types/jsonwebtoken": "^8.5.6",
       "@types/mongoose": "^5.11.97",
+      "@types/mongoose-delete": "^0.5.9",
       "@types/node": "^16.11.9",
       "@types/nodemon": "^1.19.1",
       "@types/objects-to-csv": "^1.3.1",
@@ -65,11 +57,13 @@ npm manifest:
       "express-validator": "^6.13.0",
       "ioredis": "^4.28.2",
       "json2csv": "^5.0.6",
+      "mongoose-delete": "^0.5.4",
       "nodemon": "^2.0.15",
       "pm2": "^5.1.2",
       "sequelize": "^6.12.0-alpha.1",
-      "ts-node": "^10.4.0",
+      "ts-node": "^10.7.0",
       "typeorm": "^0.2.41",
+      "typescript": "^4.6.4",
       "winston": "^3.3.3"
     }
   }
@@ -363,6 +357,13 @@ Lockfile:
     version "1.3.2"
     resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
     integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
+  
+  "@types/mongoose-delete@^0.5.9":
+    version "0.5.9"
+    resolved "https://registry.yarnpkg.com/@types/mongoose-delete/-/mongoose-delete-0.5.9.tgz#55de05203caa879a434f2de88a6c43165ac26dd1"
+    integrity sha512-ZPTmeP5UAUDTGbg3U0zr4Mf8cIg3YC8KsfxPDO6wFjms+yIGLbyt8xFEtWB08jjGJCQkGCZYU0aRV/efV7rgVw==
+    dependencies:
+      mongoose "^5.11 || ^6"
   
   "@types/mongoose@^5.11.97":
     version "5.11.97"
@@ -1924,7 +1925,12 @@ Lockfile:
     optionalDependencies:
       saslprep "^1.0.3"
   
-  mongoose@*:
+  mongoose-delete@^0.5.4:
+    version "0.5.4"
+    resolved "https://registry.yarnpkg.com/mongoose-delete/-/mongoose-delete-0.5.4.tgz#588374bf144cbffa209a549f247e5482054715f2"
+    integrity sha512-zKkcWFEwTneVG4Oiy+qJRJPFCiGlqOJToHeU3a3meJybWsHCnWxdHkGEkFWNY5cmYEv5av3WwByOhPlQ6I+FmQ==
+  
+  mongoose@*, "mongoose@^5.11 || ^6":
     version "6.3.3"
     resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.3.3.tgz#1ef1daa016ce5dfe4c905ce297a3770d62764e54"
     integrity sha512-bAGuf+6mXuVjKReNcOGjdI05y9g0JXnRpZ3/PBN3kVXIn3rbhbFwR/lPbuwtsBsWhlblMK8tieDeFAVzV6yhww==
@@ -2804,10 +2810,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
     integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
   
-  ts-node@^10.4.0:
-    version "10.4.0"
-    resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.4.0.tgz#680f88945885f4e6cf450e7f0d6223dd404895f7"
-    integrity sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==
+  ts-node@^10.7.0:
+    version "10.7.0"
+    resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.7.0.tgz#35d503d0fab3e2baa672a0e94f4b40653c2463f5"
+    integrity sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==
     dependencies:
       "@cspotcode/source-map-support" "0.7.0"
       "@tsconfig/node10" "^1.0.7"
@@ -2820,6 +2826,7 @@ Lockfile:
       create-require "^1.1.0"
       diff "^4.0.1"
       make-error "^1.1.1"
+      v8-compile-cache-lib "^3.0.0"
       yn "3.1.1"
   
   tslib@1.9.3:
@@ -2893,6 +2900,11 @@ Lockfile:
       yargs "^17.0.1"
       zen-observable-ts "^1.0.0"
   
+  typescript@^4.6.4:
+    version "4.6.4"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
+    integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
+  
   undefsafe@^2.0.5:
     version "2.0.5"
     resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.5.tgz#38733b9327bdcd226db889fb723a6efd162e6e2c"
@@ -2961,6 +2973,11 @@ Lockfile:
     version "8.3.2"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
     integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+  
+  v8-compile-cache-lib@^3.0.0:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
+    integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
   
   validator@^13.7.0:
     version "13.7.0"
