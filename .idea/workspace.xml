@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="facf035c-e3c2-4dc8-8556-324b260a6694" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/configs/postgres.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frameworks/jobs/notification.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frameworks/services/hookbinServices.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b69a4f3-2c37-4657-b264-192a6c03232c.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frameworks/database/mongodb/connection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frameworks/database/postgres/connection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frameworks/database/mongodb/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frameworks/database/postgres/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frameworks/database/postgres/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frameworks/database/postgres/models/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frameworks/http/contollers/userController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frameworks/http/contollers/userController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/locations.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/yarn-error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +62,7 @@
       <workItem from="1652591977124" duration="8828000" />
       <workItem from="1652638054552" duration="9291000" />
       <workItem from="1652662761060" duration="1294000" />
-      <workItem from="1652664061560" duration="7153000" />
+      <workItem from="1652664061560" duration="8282000" />
     </task>
     <servers />
   </component>

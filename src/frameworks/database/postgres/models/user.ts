@@ -19,7 +19,7 @@ const User = sequelize.define<UserModel>("userModel", {
     id: {
         type: Sequelize.UUID,
         primaryKey: true,
-        defaultValue: DataTypes.UUID
+        defaultValue: DataTypes.UUIDV4
     },
     first_name: {
         type : Sequelize.STRING

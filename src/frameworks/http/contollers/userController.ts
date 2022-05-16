@@ -32,17 +32,20 @@ const store = async (req : express.Request, res: express.Response) => {
             address : req.body.address,
             timezone : req.body.timezone
         }
-        await User.create(data)
+        let user = await User.create(data)
+
+        return res.json({
+            message : "User was created",
+            user : user.id
+        })
     }catch (e){
         res.json({
-            message : e.message
+            message : e.message,
         })
         throw e;
     }
 
-    return res.json({
-        message : "User was created"
-    })
+
 }
 
 const destroy = async (req : express.Request, res: express.Response) => {
